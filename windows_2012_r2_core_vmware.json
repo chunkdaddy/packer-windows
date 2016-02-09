@@ -5,7 +5,7 @@
       "iso_url": "./iso/SW_DVD9_Windows_Svr_Std_and_DataCtr_2012_R2_64Bit_English_-2_Core_MLF_X19-31419.ISO",
       "iso_checksum_type": "md5",
       "iso_checksum": "fb101ed6d7328aca6473158006630a9d",
-      "headless": true,
+      "headless": "false",
       "boot_wait": "5m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
