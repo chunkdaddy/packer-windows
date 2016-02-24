@@ -2,10 +2,10 @@
   "builders": [
     {
       "type": "vmware-iso",
-      "iso_url": "http://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso",
+      "iso_url": "./iso/SW_DVD5_Windows_Svr_DC_EE_SE_Web_2008R2_64-bit_English_X15-59754.ISO",
       "iso_checksum_type": "md5",
-      "iso_checksum": "4263be2cf3c59177c45085c0a7bc6ca5",
-      "headless": true,
+      "iso_checksum": "0207ef392c60efdda92071b0559ca0f9",
+      "headless": false,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -32,10 +32,10 @@
     },
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso",
+      "iso_url": "./iso/SW_DVD5_Windows_Svr_DC_EE_SE_Web_2008R2_64-bit_English_X15-59754.ISO",
       "iso_checksum_type": "md5",
-      "iso_checksum": "4263be2cf3c59177c45085c0a7bc6ca5",
-      "headless": true,
+      "iso_checksum": "0207ef392c60efdda92071b0559ca0f9",
+      "headless": false,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -73,10 +73,8 @@
       "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
       "scripts": [
         "./scripts/vm-guest-tools.bat",
-        "./scripts/chef.bat",
         "./scripts/vagrant-ssh.bat",
         "./scripts/enable-rdp.bat",
-        "./scripts/disable-auto-logon.bat",
         "./scripts/compact.bat"
       ]
     },
@@ -90,7 +88,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "keep_input_artifact": false,
+      "keep_input_artifact": true,
       "output": "windows_2008_r2_{{.Provider}}.box",
       "vagrantfile_template": "vagrantfile-windows_2008_r2.template"
     }
